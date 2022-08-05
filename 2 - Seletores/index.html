@@ -12,7 +12,7 @@
         <div> Div 1</div>
         <div class="diversos1"> Div 2</div>
 
-        <ul>
+        <ul id="menu1">
             <li>Menu 1 - Item 1</li>
             <li class="diversos1">Menu 1 - Item 2</li>
             <li>Menu 1 - Item 3</li>
@@ -37,7 +37,7 @@
 
         <br>
 
-        <img class="diversos2" src="carro.jpg" alt="">
+        <img id="imagemCarro" class="diversos2" src="carro.jpg" alt="">
 
     <script>
         // Selecionando pela tag
@@ -46,12 +46,16 @@
         console.log($('div')) // Selecionando todas as Divs
 
         // Selecionando por classe:
-        
         console.log($('.itemMenu2'))
 
         console.log($('.diversos1'))
 
         console.log($('.diversos2'))
+
+        // Selecionando pelo id
+        console.log($('#menu1'))
+        
+        console.log($('#imagemCarro'))
 
     </script>
 
