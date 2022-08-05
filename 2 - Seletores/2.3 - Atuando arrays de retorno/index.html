@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+    <head>
+        <meta charset="utf-8">
+        <title>jQuery</title>
+        <!-- Inclusão por CDN: -->
+        <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+    </head>
+
+    <body>
+        <input class="exemplo1" type="text" placeholder="input 1">
+        <input type="text" placeholder="input 2">
+        <input type="text" placeholder="input 3">
+
+        <div class="lista1">
+            <div class="exemplo2">div 1</div>
+            <div class="exemplo2">div 2</div>
+            <div class="exemplo2">div 3</div>
+
+        </div>
+        
+        <ul class="lista1">
+            <li class="exemplo1">opcao 1</li>
+            <li class="exemplo2">opcao 2</li>
+            <li>opcao 3</li>
+        </ul>
+
+        <ul class="lista2">
+            <li class="exemplo1">opcao 1</li>
+            <li class="exemplo2">opcao 2</li>
+            <li>opcao 3</li>
+        </ul>
+    </body>
+
+    <script>
+        // Atuando sobre o array de retorno dos elementos selecionados:
+        console.log($('.lista1 .exemplo2'))
+
+        // :first Retorna somente o primeiro elemento
+        console.log($('.lista1 .exemplo2:first'))
+
+        // :last retorna somente o último elemento
+        console.log($('.lista1 .exemplo2:last'))
+
+        //:even somente nos índices pares
+        console.log($('.lista1 .exemplo2:even'))
+        
+        // :odd somente nos índices impares
+        console.log($('.lista1 .exemplo2:odd'))
+
+
+    </script>
+
+</html>
