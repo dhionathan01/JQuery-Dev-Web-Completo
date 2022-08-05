@@ -16,9 +16,15 @@
         <div>div 2</div>
         <div>div 3</div>
 
-        <ul>
+        <ul class="lista1">
             <li class="exemplo1">opcao 1</li>
-            <li>opcao 2</li>
+            <li class="exemplo2">opcao 2</li>
+            <li>opcao 3</li>
+        </ul>
+
+        <ul class="lista2">
+            <li class="exemplo1">opcao 1</li>
+            <li class="exemplo2">opcao 2</li>
             <li>opcao 3</li>
         </ul>
     </body>
@@ -30,6 +36,14 @@
 
         // Seleciona somente os elementos li que tenha a classe exemplo 1
         console.log($('li.exemplo1')) 
+
+        // Selecionar elementos por classe de classe específica:
+
+        // Seleciona todos elementos com classe exemplo 2
+        console.log($('.exemplo2')) 
+        
+        // seleciona somente os elementos com classe exemplo 2 que esteja contido em um elemento que tenha classe lista1
+        console.log($('.lista1 .exemplo2'))
 
         
 
