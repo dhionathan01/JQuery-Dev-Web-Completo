@@ -4,7 +4,9 @@ j(document).ready(() => {
     
 })
 
-/* j("#nome").val
+/*
+COMANDO EXECUTADOS NO CONSOLE:
+j("#nome").val
 ? (n){var r,e,i,t=this[0];return arguments.length?(i=m(n),this.each(function(e){var t;1===this.nodeType&&(null==(t=i?n.call(this,e,S(this).val()):n)?t="":"number"==typeof t?t+="":Array.isArray(t)&&(t=S?
 j("#nome").val()
 'Dhionathan'
