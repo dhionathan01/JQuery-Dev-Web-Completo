@@ -1,0 +1,57 @@
+// Recuperando os valores selecionados:
+undefined
+// Sexo :
+undefined
+j('.sexo').val()
+'f'
+// Observe que ele retorna o primeiro valor independe se algo estiver marcado ou não
+undefined
+// Para recuperar o valor selecionado deve se utilizar o termo :checked, Observe:
+undefined
+j('.sexo:checked').val()
+'m'
+// Interesses
+undefined
+j('.interesses').val()
+undefined
+j('.interesse').val()
+'php'
+// No caso de interesses , por se tratar de checkbox, mais de um pode ser selecionado, nesse tipo de situação, ele retornara somente a primeira opção marcada:
+undefined
+// OBS que existem 2 campos marcados:
+undefined
+j('.interesse:cheked')
+jquery-3.6.1.min.js:2 Uncaught Error: Syntax error, unrecognized expression: unsupported pseudo: cheked
+    at se.error (jquery-3.6.1.min.js:2:13639)
+    at PSEUDO (jquery-3.6.1.min.js:2:16708)
+    at Ee (jquery-3.6.1.min.js:2:20889)
+    at se.compile (jquery-3.6.1.min.js:2:21783)
+    at se.select (jquery-3.6.1.min.js:2:22998)
+    at Function.se [as find] (jquery-3.6.1.min.js:2:7116)
+    at S.fn.init.find (jquery-3.6.1.min.js:2:25047)
+    at new S.fn.init (jquery-3.6.1.min.js:2:25536)
+    at S (jquery-3.6.1.min.js:2:1051)
+    at <anonymous>:1:1
+se.error @ jquery-3.6.1.min.js:2
+PSEUDO @ jquery-3.6.1.min.js:2
+Ee @ jquery-3.6.1.min.js:2
+se.compile @ jquery-3.6.1.min.js:2
+se.select @ jquery-3.6.1.min.js:2
+se @ jquery-3.6.1.min.js:2
+find @ jquery-3.6.1.min.js:2
+S.fn.init @ jquery-3.6.1.min.js:2
+S @ jquery-3.6.1.min.js:2
+(anónimo) @ VM2530:1
+j('.interesse:checked')
+S.fn.init(2) [input#interesse.interesse, input#interesse.interesse, prevObject: S.fn.init(1)]
+// Mas ao tentar pegar os valores somente o primeiro é retornado
+undefined
+j('.interesse:checked').val()
+'js'
+// Para selecionar esses todos os valores precisamos utilizar uma função do jQuery chamada each, que consiste na seguinte sintaxe: 
+// j.each('array_de_valores'), funcaoCallback(indice, valor){O que executar para cada valor desse}
+undefined
+j.each(j('.interesse:checked'), (indice, valor)=>{console.log(indice, valor.value)})
+VM4157:1 0 'js'
+VM4157:1 1 'angular'
+S.fn.init(2) [input#interesse.interesse, input#interesse.interesse, prevObject: S.fn.init(1)]
