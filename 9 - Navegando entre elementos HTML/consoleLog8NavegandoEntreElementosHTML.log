@@ -1,0 +1,46 @@
+// Utilizando o Metodo .parent() pegamos o pai dessa classe
+undefined
+j('.secao1').parent()
+w.fn.init [div#pagina, prevObject: w.fn.init(1)]
+// Metodo closest procura pelos elementos pai
+undefined
+j('.secao1').closest()
+w.fn.init [prevObject: w.fn.init(1)]length: 0prevObject: w.fn.init [div.secao1, prevObject: w.fn.init(1)][[Prototype]]: Object(0)
+// Metodo closest procura por um elemento pai que contenha a a definição escolhida
+undefined
+// O metodo a seguir vai procurar dentre os pais algum que possua o id pagina
+undefined
+j('.subSecao').closest('#pagina')
+w.fn.init [div#pagina, prevObject: w.fn.init(1)]
+// O metodo a seguir vai procurar dentre os pais algum que possua a classe secao1
+undefined
+j('.subSecao').closest('#pagina')
+w.fn.init [div#pagina, prevObject: w.fn.init(1)]
+j('.subSecao').closest('.secao1')
+w.fn.init [div.secao1, prevObject: w.fn.init(1)]
+// O metodo a seguir vai procurar dentre os pais alguma tag ul:
+undefined
+j('.item').closest('ul')
+w.fn.init [ul.menu, prevObject: w.fn.init(2)]
+// o .find() Procura dentro dos elementos filhos , obs:
+undefined
+j('topo').find('p')
+w.fn.init [prevObject: w.fn.init(0)]
+j('#topo').find('p')
+w.fn.init [prevObject: w.fn.init(1)]length: 0prevObject: w.fn.init [div#topo][[Prototype]]: Object(0)
+// Ignore as duas opções acima
+undefined
+// o .find() Procura dentro dos elementos filhos , obs:
+undefined
+j('#rodape').find('p')
+w.fn.init [p, prevObject: w.fn.init(1)]0: plength: 1prevObject: w.fn.init [div#rodape][[Prototype]]: Object(0)
+j('#topo').find('.item')
+w.fn.init(2) [li.item, li.item, prevObject: w.fn.init(1)]
+j('.secao1').find('h1')
+w.fn.init [prevObject: w.fn.init(1)]
+j('.secao1').parent().find('h1')
+w.fn.init [h1, prevObject: w.fn.init(1)]
+//Podemos navegar e selecionar um elemento filho que no caso seria irmaõ  do atual
+undefined
+j('.secao1').parent().find('h1')
+w.fn.init [h1, prevObject: w.fn.init(1)]
