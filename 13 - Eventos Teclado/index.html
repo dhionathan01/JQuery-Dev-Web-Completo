@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="ISO 8859-1">
+		<title>jQuery</title>
+
+		<style>
+			#divExterna {
+				background-color: #ccc;
+				height: 80px;
+				width: 80px;
+				padding: 70px;
+			}
+
+			#divInterna{
+				width: 80px;
+				height: 80px;
+				background-color: blue;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(()=>{
+				/* $('#teclado').keydown((e)=>{
+					$('#resultadoTecla').html('Tecla pressionada')
+					console.log("Tecla Pressionada")
+					console.log(e.keyCode)
+				}) */
+				$('#teclado').keyup((e)=>{
+					$('#resultadoTecla').html('Tecla liberada')
+					console.log("tecla Liberada")
+					console.log(e.keyCode)
+					if(e.keyCode == 13){
+						let textoInput = $(e.target).val()
+						$('#resultadoTecla').html(textoInput)
+						$(e.target).val('')
+					}
+				})
+				$('#teclado').keyup((e)=>{
+					$('#resultadoTecla').html('Tecla liberada')
+					console.log("tecla Liberada")
+					console.log(e.keyCode)
+					if(e.keyCode  < 97 || e.keyCode > 100){ // so permite digitar 1234
+						let textoInput = $(e.target).val()
+						textoInput = textoInput.slice(0, -1)
+
+						$(e.target).val(textoInput)
+					}
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span> Resize Window: </span><span id="resize">?</span>
+			<div id="div_teste" style="height:100px; width:100px; border:solid 1px; overflow-y:scroll">
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button type="button" id="btn1">Clique aqui</button>
+			<button type="button" id="btn2">Clique aqui 2x</button>
+			<div id="div_exemplo_alterar_background" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div: :</span><span id="resultado_div"></span>
+			<hr />
+
+			<div id="divExterna">
+				<div id="divInterna"></div>
+			</div>
+			<span>Div Externa: </span><span id="resultadoDiv1"></span>
+			<br>
+			<span>Div Interna: </span><span id="resultadoDiv2"></span>
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input type="text" id="teclado" />
+			<span id="resultadoTecla">Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form>
+				<span>Nome:</span>
+				<input type="text" />
+
+				<span>E-mail:</span>
+				<input type="text" />
+
+				<span>Motivo do contato:</span>
+				<select>
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvidas</option>
+					<option value="sugestao">Sugestões</option>
+				</select>
+				
+				<button type="button">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>
