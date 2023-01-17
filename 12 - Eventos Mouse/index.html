@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+	<head>
+		<meta charset="ISO 8859-1">
+		<title>jQuery</title>
+
+		<style>
+			#divExterna {
+				background-color: #ccc;
+				height: 80px;
+				width: 80px;
+				padding: 70px;
+			}
+
+			#divInterna{
+				width: 80px;
+				height: 80px;
+				background-color: blue;
+			}
+		</style>
+
+		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
+		<script>
+			$(document).ready(()=>{
+				$('#onload').html("Pagina Carregada");
+				$(window).scroll(()=>{
+					$("#scroll").html("Scroll Acionado")
+				})
+				$(window).resize(()=>{
+					$('#resize').html('Página redimensionada').css('background-color', 'red')
+				})
+				$('#div_teste').scroll((event)=>{
+					$(event.target).css('background-color', 'blue')
+				})
+				// Conteudo Dessa Aula:
+				$('#btn1').mousedown(()=>{
+					// Ao pressionar o botão cujo o id seja #btn1 o background da div com id #div_exemplo_alterar_background sera modificado para verde
+					$('#div_exemplo_alterar_background').css('background-color', 'green')
+				})
+				$('#btn1').mouseup(()=>{
+					// Quando liberar o pressionar do botão o background ficara azul
+					$('#div_exemplo_alterar_background').css('background-color', 'blue')
+				})
+				// o clique é a junção do mousedown e o mouseup
+
+				$('#btn2').dblclick(()=>{
+					// ao dar dois cliques com no botão com id btn 2 o background de exemplo ficara amarelo
+					$('#div_exemplo_alterar_background').css('background-color', 'yellow')
+				})
+
+				// Mouse move:
+				$('#div_exemplo_alterar_background').mousemove((event)=>{
+					console.log(event.offsetX, event.offsetY)
+					$('#resultado_div').html(`X: ${event.offsetX} / Y: ${event.offsetY} `)
+				})
+
+				// Conteudo aula 2:
+				/*  $('#divExterna').mouseover(()=>{
+					$('#resultadoDiv1').html('Entrou')
+					console.log(`Div Externa : Entrou`)
+				})
+
+				$('#divExterna').mouseout(()=>{
+					$('#resultadoDiv1').html('Saiu')
+					console.log(`Div Externa : Saiu`)
+				})
+				 $('#divInterna').mouseover(()=>{
+					$('#resultadoDiv2').html('Entrou')
+					console.log(`Div Interna : Entrou`)
+				})
+
+				$('#divInterna').mouseout(()=>{
+					$('#resultadoDiv2').html('Saiu')
+					console.log(`Div Interna : Saiu`)
+				}) */
+
+				 $('#divInterna').mouseenter(()=>{
+					$('#resultadoDiv2').html('Entrou')
+					console.log(`Div Interna : Entrou`)
+				})
+
+				$('#divInterna').mouseleave(()=>{
+					$('#resultadoDiv2').html('Saiu')
+					console.log(`Div Interna : Saiu`)
+				})
+				 $('#divExterna').mouseenter(()=>{
+					$('#resultadoDiv1').html('Entrou')
+					console.log(`Div Externa : Entrou`)
+				})
+
+				$('#divExterna').mouseleave(()=>{
+					$('#resultadoDiv1').html('Saiu')
+					console.log(`Div EXterna : Saiu`)
+				})
+			})
+		</script>
+	</head>
+
+	<body>
+		
+		<div id="topo">
+			<h1>Eventos</h1>
+		</div>
+
+		<div>
+			<h3>Browser</h3>
+			<span>Onload: </span><span id="onload">?</span><br />
+			<span>Scroll: </span><span id="scroll">?</span><br />
+			<span> Resize Window: </span><span id="resize">?</span>
+			<div id="div_teste" style="height:100px; width:100px; border:solid 1px; overflow-y:scroll">
+				<br><br><br><br><br><br><br><br><br><br><br>
+			</div>
+			<hr />
+
+			<h3>Mouse</h3>
+			<button type="button" id="btn1">Clique aqui</button>
+			<button type="button" id="btn2">Clique aqui 2x</button>
+			<div id="div_exemplo_alterar_background" style="background-color: red; width: 80px; height: 50px; margin-top: 10px; margin-bottom: 10px"></div>
+			<span>Resultado do evento sobre a div: :</span><span id="resultado_div"></span>
+			<hr />
+
+			<div id="divExterna">
+				<div id="divInterna"></div>
+			</div>
+			<span>Div Externa: </span><span id="resultadoDiv1"></span>
+			<br>
+			<span>Div Interna: </span><span id="resultadoDiv2"></span>
+
+			<h3>Teclado</h3>
+			<span>Nome:</span>
+			<input type="text" />
+			<span>Resultado do evento sobre o input</span>
+			<hr />
+
+			<h3>Formulário</h3>
+			<form>
+				<span>Nome:</span>
+				<input type="text" />
+
+				<span>E-mail:</span>
+				<input type="text" />
+
+				<span>Motivo do contato:</span>
+				<select>
+					<option value="">-- Selecione --</option>
+					<option value="duvida">Dúvidas</option>
+					<option value="sugestao">Sugestões</option>
+				</select>
+				
+				<button type="button">Enviar</button>
+			</form>
+		</div>
+	</body>
+
+</html>
