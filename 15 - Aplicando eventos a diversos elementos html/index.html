@@ -25,20 +25,12 @@
 		<script src="https://code.jquery.com/jquery-3.3.1.min.js" integrity="sha256-FgpCb/KJQlLNfOu91ta32o/NMZxltwRo8QtmkMRdAu8=" crossorigin="anonymous"></script>
 		<script>
 			$(document).ready(()=>{
-				$('#nome').focus((e)=>{
+				$('#nome, #email').focus((e)=>{
 					console.log("Esse elemento html recebeu foco (nome)")
 					$(e.target).addClass('inputFocado')
 				})
-				$('#email').focus((e)=>{
-					console.log("Esse elemento html recebeu foco (email)")
-					$(e.target).addClass('inputFocado')
-				})
-				$('#nome').blur((e)=>{
+				$('#nome, #email').blur((e)=>{
 					console.log("Esse elemento html perdeu foco (nome)")
-					$(e.target).removeClass('inputFocado')
-				})
-				$('#email').blur((e)=>{
-					console.log("Esse elemento html perdeu foco (email)")
 					$(e.target).removeClass('inputFocado')
 				})
 
@@ -52,6 +44,7 @@
 					console.log("Formulário enviado")
 				})
 			})
+
 
 		</script>
 	</head>
