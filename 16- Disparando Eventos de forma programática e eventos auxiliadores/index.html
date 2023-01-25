@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="ISO 8859-1">
+        <title>jquery</title>
+        <style>
+            #div1{
+                width: 80px;
+                height: 80px;
+                border: solid 1px #000;
+            }
+            .emDestaque{
+                background-color: red;
+            }
+        </style>
+        <script src="https://code.jquery.com/jquery-3.6.3.min.js" integrity="sha256-pvPw+upLPUjgMXY0G+8O0xUf+/Im1MZjXxxgOcBQBXU=" crossorigin="anonymous"></script>
+        <script>
+            $(document).ready(()=>{
+                  $('#btn2').on('click',()=>{
+                    alert('BTN2 Clicado')
+                })
+                $('#btn1').on('click', () =>{
+                    $('#btn2').trigger('click')// acionando o evento de click do btn 2
+                })
+                // Forma longa de tratar:
+                /*
+                $('#div1').on('mouseenter', (event)=>{
+                    $(event.target).addClass('emDestaque')
+                })
+                $('#div1').on('mouseleave', (event)=>{
+                    $(event.target).removeClass('emDestaque')
+                }) */
+
+                // Forma encurtada com auxilio do hover:
+                /* $('#div1').hover(
+                    (event)=>$(event.target).addClass('emDestaque'),
+                    (event)=>$(event.target).removeClass('emDestaque')
+                ) */
+                // Forma encurtada com hover  eo toggle:
+                $('#div1').hover(
+                    (event)=>{
+                        $(event.target).toggleClass('emDestaque')
+                    }
+                )
+            })
+        </script>
+    </head>
+
+    <body>
+        <button id="btn1" type="button">BTN1</button>
+        <button id="btn2" type="button">BTN2</button>
+        <div id="div1">
+
+        </div>
+    </body>
+</html>
